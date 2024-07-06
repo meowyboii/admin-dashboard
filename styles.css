@@ -1,10 +1,8 @@
 :root {
   /* Color Palette */
   --primary-color: #9d174d;
-  --secondary-color: #d3bcc9;
   --text-color: #4d4d4d;
   --dirty-white: #f3f3f3;
-  --border-danger: #c94a41;
 
   /* Font Sizes */
   --font-small: 0.95rem;
@@ -27,13 +25,13 @@ i {
 span {
   cursor: pointer;
 }
+p {
+  font-weight: 450;
+}
 #container {
   display: grid;
   grid-template-columns: 1fr 4fr;
   height: 100vh;
-}
-.container-item {
-  border: 1px solid black;
 }
 #sidebar {
   display: grid;
@@ -67,6 +65,7 @@ i.dashboard {
   box-shadow: 10px 0 6px 5px rgba(36, 36, 36, 0.219);
   padding: 10px 40px;
   background-color: white;
+  row-gap: 5px;
 }
 #search-bar {
   padding: 10px;
@@ -76,7 +75,7 @@ i.dashboard {
 }
 input[type="search"] {
   width: 70%;
-  height: 80%;
+  height: 30px;
   border: 0;
   border-radius: 10px;
   background-color: var(--dirty-white);
@@ -96,6 +95,10 @@ input[type="search"] {
   height: 50px;
   background-color: var(--primary-color);
   border-radius: 50%;
+  overflow: hidden;
+}
+.circle img {
+  object-fit: cover;
 }
 #profile-icon-lg {
   grid-row: 1 / span 2;
@@ -117,20 +120,26 @@ input[type="search"] {
 #actions button {
   background-color: var(--primary-color);
   padding: 10px;
-  border: 0;
+  border: var(--primary-color) solid 2px;
   border-radius: 30px;
   color: white;
   font-weight: 500;
   font-size: var(--font-small);
   cursor: pointer;
   width: clamp(100px, 6vw, 200px);
+  height: 45px;
+  transition-duration: 0.4s;
+}
+#actions button:hover {
+  transform: translateY(-3px);
+  box-shadow: 1px 4px 4px 2px rgba(36, 36, 36, 0.103);
 }
 #main-content {
   display: flex;
   justify-content: center;
   padding: 30px;
   gap: 20px;
-  height: 83vh;
+  height: 83%;
   background-color: var(--dirty-white);
 }
 #projects-container {
@@ -177,6 +186,7 @@ input[type="search"] {
   justify-content: end;
   align-items: end;
   gap: 30px;
+  color: var(--primary-color);
 }
 #side-info {
   display: flex;
@@ -200,6 +210,7 @@ input[type="search"] {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  transition-duration: 0.4s;
 }
 .announcement p {
   margin-bottom: 20px;
@@ -207,6 +218,7 @@ input[type="search"] {
   font-weight: 450;
   color: var(--text-color);
   line-height: 17px;
+  cursor: pointer;
 }
 #trending {
   margin: 15px 0 10px 0;
@@ -224,6 +236,12 @@ input[type="search"] {
   display: flex;
   align-items: center;
   gap: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.trend:hover,
+.announcement:hover {
+  background-color: var(--dirty-white);
 }
 .trend p {
   font-size: 0.8rem;
