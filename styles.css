@@ -58,6 +58,7 @@ i.dashboard {
 #main {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 #header {
   display: grid;
@@ -65,7 +66,6 @@ i.dashboard {
   grid-template-rows: repeat(2, 1fr);
   box-shadow: 10px 0 6px 5px rgba(36, 36, 36, 0.219);
   padding: 10px 40px;
-  row-gap: 10px;
   background-color: white;
 }
 #search-bar {
@@ -75,8 +75,8 @@ i.dashboard {
   gap: 10px;
 }
 input[type="search"] {
-  width: 65%;
-  height: 30px;
+  width: 70%;
+  height: 80%;
   border: 0;
   border-radius: 10px;
   background-color: var(--dirty-white);
@@ -121,7 +121,7 @@ input[type="search"] {
   border-radius: 30px;
   color: white;
   font-weight: 500;
-  font-size: 15px;
+  font-size: var(--font-small);
   cursor: pointer;
   width: clamp(100px, 6vw, 200px);
 }
@@ -130,7 +130,7 @@ input[type="search"] {
   justify-content: center;
   padding: 30px;
   gap: 20px;
-  height: 85vh;
+  height: 82vh;
   background-color: var(--dirty-white);
 }
 #projects-container {
@@ -145,7 +145,7 @@ input[type="search"] {
   gap: 30px;
   height: 100%;
   overflow: auto;
-  margin-top: 15px;
+  margin-top: 5px;
   padding: 10px;
 }
 .project-bg {
@@ -158,6 +158,7 @@ input[type="search"] {
   background-color: white;
   height: 100%;
   padding: 35px 30px;
+  border-radius: 0 8px 8px 0;
   color: var(--text-color);
 }
 .project-content {
@@ -182,7 +183,6 @@ input[type="search"] {
   flex-direction: column;
   width: 30%;
   height: 100%;
-  padding: 10px;
 }
 #announcements {
   margin: 15px 0 25px 0;
@@ -193,7 +193,7 @@ input[type="search"] {
 .announcement {
 }
 #trending {
-  margin-top: 15px;
+  margin: 15px 0 10px 0;
   height: 50%;
   box-shadow: 1px 2px 6px 5px rgba(36, 36, 36, 0.089);
   border-radius: 8px;
